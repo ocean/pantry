@@ -9,10 +9,10 @@
 		{ "name": "Drew Robinson", "url": "https://github.com/ocean" }
 	],
 	"dependencies": {
-		"request": "~2.53",
+		"request": "~2.x",
 		"xml2js": "~0.4.4",
 		"winston": "~0.8.3",
-		"soap": "~0.2.7"
+		"soap": "~0.12.x"
 	},
 	"devDependencies": {
 		"mocha": "~1.12",
@@ -30,5 +30,5 @@
 	"scripts": {
 		"test": "mocha"
 	},
-	"engines": { "node": ">=0.8.0 <0.11", "npm": "1.x" }
+	"engines": { "node": "*", "npm": "*" }
 }
