@@ -11,14 +11,14 @@
 	"dependencies": {
 		"request": "~2.x",
 		"xml2js": "~0.4.4",
-		"winston": "~0.8.3",
-		"soap": "~0.12.x"
+		"winston": "~2.3.0",
+		"soap": "~0.17.0"
 	},
 	"devDependencies": {
-		"mocha": "~1.12",
-		"should": "~1.2",
-		"memcached": "~0.2.3",
-		"redis": "~0.8.4"
+		"mocha": "~3.1.2",
+		"should": "~11.1.1",
+		"memcached": "~2.2.2",
+		"redis": "~2.6.3"
 	},
 	"bugs": { "url": "https://github.com/Postmedia/pantry/issues"},
 	"licenses": [
