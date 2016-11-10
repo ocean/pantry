@@ -1,4 +1,7 @@
 # Pantry
+
+[![Build Status](https://travis-ci.org/ocean/pantry.svg)](https://travis-ci.org/ocean/pantry)
+
 A JSON/XML resource caching library based on Request
 
 ## Introduction
