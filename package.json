@@ -12,7 +12,7 @@
 		"request": "~2.x",
 		"xml2js": "~0.4.4",
 		"winston": "~2.3.0",
-		"soap": "~0.17.0"
+		"soap": "~0.18.0"
 	},
 	"devDependencies": {
 		"mocha": "~3.2.0",
