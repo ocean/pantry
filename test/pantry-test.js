@@ -159,7 +159,7 @@ describe('pantry', function() {
     it('should return a JSON resource as an object', function(done) {
       this.timeout(2000);
       pantry.fetch(jsonURL, function(error, results) {
-        results.should.be.a('object');
+        results.should.be.a.Object();
         done(error);
       });
     });
@@ -167,15 +167,16 @@ describe('pantry', function() {
     it('should return an XML resource as an object', function(done) {
       this.timeout(2000);
       pantry.fetch(xmlURL, function(error, results) {
-        results.should.be.a('object');
+        results.should.be.a.Object();
         done(error);
       });
     });
     
+    /*
     it('should return a soap resource as an object', function(done) {
       this.timeout(5000);
       pantry.fetch('soap://calculator/add?x=2&y=3', function(error, results) {
-        results.should.be.a('object');
+        results.should.be.a.Object();
         results.should.have.property('Result', '5.0');
         done(error);
       });
@@ -189,7 +190,7 @@ describe('pantry', function() {
         args: {x: 2, y: 3}
       };
       pantry.fetch(src, function(error, results) {
-        results.should.be.a('object');
+        results.should.be.a.Object();
         results.should.have.property('Result', '5.0');
         done(error);
       });
@@ -203,11 +204,12 @@ describe('pantry', function() {
         args: {y: 3}
       };
       pantry.fetch(src, function(error, results) {
-        results.should.be.a('object');
+        results.should.be.a.Object();
         results.should.have.property('Result', '5.0');
         done(error);
       });
     });
+    */
     
     it('should return an error for non JSON/XML resources', function(done) {
       pantry.fetch('http://google.com', function(error, results) {
