@@ -21,9 +21,7 @@
 		"redis": "~2.6.3"
 	},
 	"bugs": { "url": "https://github.com/Postmedia/pantry/issues"},
-	"licenses": [
-		{ "type": "MIT", "url": "https://github.com/Postmedia/pantry/blob/master/LICENSE"}
-	],
+	"license": "MIT",
 	"keywords": ["request", "cache", "json", "xml", "redis", "memcached", "soap"],
 	"repository": "git://github.com/postmedia/pantry",
 	"main": "./lib/pantry",
