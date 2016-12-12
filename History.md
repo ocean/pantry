@@ -1,3 +1,18 @@
+1.0.0 / 2016-12-12
+==================
+  * Dropped support for SOAP.
+
+0.7.8 / 2016-12-09
+==================
+  * Updated request and soap libraries.
+  * Fixed some broken tests.
+
+0.7.7 / 2016-11-28
+==================
+  * Cumulative updates of several dependencies: soap, mocha, winston, hawk.
+  * Added Travis CI integration for testing.
+  * Fixed Object.hasOwnProperty() bug in lib/pantry.js.
+
 0.7.6 / 2016-01-07
 ==================
   * Added Pantry.remove() function to remove individual items from the Pantry cache.

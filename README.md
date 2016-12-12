@@ -127,55 +127,7 @@ Example:
 
 ## SOAP Support
 
-As of v0.5.1, Pantry contains experimental support for SOAP requests.  To make SOAP requests, you must first configure Pantry by pointing it to the correct WSDL using the initSoap(name, url, callback) method like this:
-
-	pantry.initSoap('calculator', 'http://some.domain/service/wsdl', function(error, client) {
-		//  configuration completed. you can further configure the client (e.g. authentication) if needed
-	});
-	
-The name parameter can be any made up but valid host name.  This allows you to configure and identify multiple SOAP services.  SOAP requests are handled by the [soap](https://github.com/milewise/node-soap) package as opposed to Request.
-
-If you attempt to configure a service under an already existing name, it will be ignored.  The error and client parameters in this situation will both be undefined.
-
-Once configured, you can use our custom 'soap' protocol and the host name you defined during configuration to make your SOAP requests like this:
-
-	var src = {
-		uri: 'soap://calculator/add?x=2&y=3,
-		maxLife: 60
-	}
-	
-The code above tells pantry you want to make a request to the SOAP service named 'calculator' (by you via initSoap) and call the add method, passing it parameters x and y.
-
-Putting it all together, you can execute a SOAP request using the following pattern (plus additional error handling of course).
-
-	pantry.initSoap('calculator', 'http://some.domain/service/wsdl', function(error, client) {
-		if (client) {
-			// additional one-time client configuration goes here
-		}
-		
-		pantry.fetch('soap://calculator/add?x=2&y=3', function(error, item) {
-			// handle the data here
-		});
-	});
-	
-As of v0.5.2, Pantry also supports complex data types in soap requests.  They can be passed in via the 'args' property like the following:
-
-	var src = {
-		uri: 'soap://calculator/add',
-		key: 'calculator/add/2/3'
-		maxLife: 60,
-		args: {
-			x: 2,
-			y: 3,
-			'namespace:name': 'some value',
-			myobject: {
-				first: 'billy',
-				last: 'bob'
-			}
-		}
-	};
-	
-When passing in values via arg, please ensure you specify your own unique cache key like in the example above!  In a future release we'll likely make it a requirement for SOAP and POST requests.
+Support for SOAP requests has been dropped from this version due to the many security issues with dependencies, and the fact that I don't need SOAP support.
 	
 ## Upgrading
 

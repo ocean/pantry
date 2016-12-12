@@ -31,25 +31,6 @@ describe('pantry', function() {
     
   });
   
-  describe('initSoap', function() {
-    it('should create a soap client for a valid WSDL', function(done) {
-      this.timeout(10000);
-      pantry.initSoap('calculator', 'http://soaptest.parasoft.com/calculator.wsdl', function(err, client) {
-        should.exist(client);
-        should.exist(client.add);
-        done(err);
-      });
-    });
-    it('should not recreate a soap client under the same name', function(done) {
-      this.timeout(10000);
-      pantry.initSoap('calculator', 'http://soaptest.parasoft.com/calculator.wsdl', function(err, client) {
-        should.not.exist(client);
-        done(err);
-      });
-    });
-    
-  });
-  
   describe('generateKey', function() {
     
     it('should leave case alone if caseSensitive', function() {
@@ -68,22 +49,13 @@ describe('pantry', function() {
       key.should.equal('http://search.twitter.com/search.json?q=sugar');
     });
     
-    it('should rearrange parmaters alphabetically', function() {
+    it('should rearrange parameters alphabetically', function() {
       var key = pantry.generateKey({
         uri: 'http://search.twitter.com/search.json?since=1234&q=sugar',
         caseSensitive: true
       });
       key.should.equal('http://search.twitter.com/search.json?q=sugar&since=1234');
     });
-    
-    it('should support soap requests', function() {
-      var key = pantry.generateKey({
-        uri: 'soap://calculator/add?y=3&x=2',
-        caseSensitive: true
-      });
-      key.should.equal('soap://calculator/add?x=2&y=3');
-    });
-    
     
   });
   
@@ -171,45 +143,6 @@ describe('pantry', function() {
         done(error);
       });
     });
-    
-    /*
-    it('should return a soap resource as an object', function(done) {
-      this.timeout(5000);
-      pantry.fetch('soap://calculator/add?x=2&y=3', function(error, results) {
-        results.should.be.a.Object();
-        results.should.have.property('Result', '5.0');
-        done(error);
-      });
-    });
-    
-    it('should support soap request with arguments', function(done) {
-      this.timeout(5000);
-      var src = {
-        uri: 'soap://calculator/add',
-        key: 'soap://calculator/add/2/3',
-        args: {x: 2, y: 3}
-      };
-      pantry.fetch(src, function(error, results) {
-        results.should.be.a.Object();
-        results.should.have.property('Result', '5.0');
-        done(error);
-      });
-    });
-    
-    it('should support soap request with qs and arguments', function(done) {
-      this.timeout(10000);
-      var src = {
-        uri: 'soap://calculator/add?x=2',
-        key: 'soap://calculator/add/2/3',
-        args: {y: 3}
-      };
-      pantry.fetch(src, function(error, results) {
-        results.should.be.a.Object();
-        results.should.have.property('Result', '5.0');
-        done(error);
-      });
-    });
-    */
     
     it('should return an error for non JSON/XML resources', function(done) {
       pantry.fetch('http://google.com', function(error, results) {
