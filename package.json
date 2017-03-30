@@ -1,7 +1,7 @@
 {
 	"name": "pantry",
 	"description": "A JSON/XML resource caching library based on Request",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"homepage": "https://github.com/ocean/pantry",
 	"author": "Edward de Groot <edegroot@postmedia.com> (http://mred9.com)",
 	"contributors": [
@@ -14,10 +14,10 @@
 		"winston": "~2.3.0"
 	},
 	"devDependencies": {
-		"mocha": "~3.2.0",
-		"should": "~11.2.0",
+		"mocha": "~3.2.x",
+		"should": "~11.2.x",
 		"memcached": "~2.2.2",
-		"redis": "~2.7.0"
+		"redis": "~2.7.x"
 	},
 	"bugs": { "url": "https://github.com/ocean/pantry/issues"},
 	"license": "MIT",
@@ -27,5 +27,7 @@
 	"scripts": {
 		"test": "mocha"
 	},
-	"engines": { "node": "*", "npm": "*" }
+	"engines": {
+		"node": "^6.x"
+	}
 }
