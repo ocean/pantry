@@ -28,6 +28,6 @@
 		"test": "mocha"
 	},
 	"engines": {
-		"node": "^6.x"
+		"node": "*"
 	}
 }
