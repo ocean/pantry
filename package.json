@@ -14,7 +14,7 @@
 		"winston": "~2.3.0"
 	},
 	"devDependencies": {
-		"mocha": "~3.3.0",
+		"mocha": "~3.5.0",
 		"should": "~11.2.x",
 		"memcached": "~2.2.2",
 		"redis": "~2.7.x"
