@@ -9,7 +9,7 @@
 		{ "name": "Drew Robinson", "url": "https://github.com/ocean" }
 	],
 	"dependencies": {
-		"request": "~2.81.x",
+		"request": "~2.83.0",
 		"xml2js": "~0.4.4",
 		"winston": "~2.3.0"
 	},
